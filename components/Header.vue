@@ -1,0 +1,7 @@
+<template>
+  <nav>
+    <ul>
+      <li><NuxtLink to="/">Home</NuxtLink></li>
+    </ul>
+  </nav>
+</template>
