@@ -10,13 +10,27 @@ useHead({
     },
   ],
 });
-const { pending, data } = await useFetch(`${baseUrl()}/api/restaurants/list`, {
+const { pending, data: contents } = await useFetch(`${baseUrl()}/api/restaurants/list`, {
   method: 'get',
   lazy: true,
 });
+function increment() {
+  console.log('hi');
+}
+const array = [
+  {
+    id: 1,
+    name: 'jul',
+  },
+  {
+    id: 2,
+    name: 'abb',
+  },
+];
 </script>
 <template>
-  <p>Home Page</p>
-  <p>hi this is a home page</p>
-  <p>{{ JSON.stringify(data) }}</p>
+  <div v-if="pending">Loading ...</div>
+  <template v-else v-for="(content, i) in contents">
+    <ProductList v-if="i === 5" v-bind:lists="content.lists?.restaurants ? content.lists?.restaurants : []" />
+  </template>
 </template>
