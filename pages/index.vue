@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import baseUrl from '@/helpers/baseUrl';
+import HeroSlider from '~/components/slider/HeroSlider.vue';
+import ProductList from '~/components/ProductList.vue';
+import CategorySlider from '~/components/slider/CategorySlider.vue';
+import ProductSlider from '~/components/slider/ProductSlider.vue';
 useHead({
   title: 'Order food online from Indias best food delivery service. Order from restaurants near you',
   meta: [
@@ -31,6 +35,11 @@ const array = [
 <template>
   <div v-if="pending">Loading ...</div>
   <template v-else v-for="(content, i) in contents">
-    <ProductList v-if="i === 5" v-bind:lists="content.lists?.restaurants ? content.lists?.restaurants : []" />
+    <HeroSlider v-if="i === 0" v-bind:lists="content.lists?.info ? content.lists?.info : []" />
+    <CategorySlider v-else-if="i === 1" v-bind:lists="content.lists?.info ? content.lists?.info : []" />
+    <template v-else-if="i === 5">
+      <ProductSlider v-bind:lists="content.lists?.restaurants ? content.lists?.restaurants : []" />
+      <ProductList v-bind:lists="content.lists?.restaurants ? content.lists?.restaurants : []" />
+    </template>
   </template>
 </template>

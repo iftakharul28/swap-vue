@@ -1,5 +1,11 @@
-<script lang="ts">
+<script setup lang="ts">
+import SearchIcon from '~/assets/icons/SearchIcon.vue';
 import Button from './Button.vue';
+import OfferIcon from '~/assets/icons/OfferIcon.vue';
+import HelpIcon from '~/assets/icons/HelpIcon.vue';
+import PersonIcon from '~/assets/icons/PersonIcon.vue';
+import SiteLogo from '~/assets/icons/SiteLogo.vue';
+import CartIcon from '~/assets/icons/CartIcon.vue';
 </script>
 <template>
   <header class="h-20 z-20 fixed left-0 right-0 top-0 bg-white px-5 heder-shadow">

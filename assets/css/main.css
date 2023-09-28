@@ -10,6 +10,36 @@ body {
   font-family: 'BasisGrotesquePro', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   letter-spacing: normal;
 }
+@font-face {
+  font-family: 'BasisGrotesqueProBlack';
+  src: local('BasisGrotesqueProBlack'), url('./fonts/BasisGrotesquePro-Black.woff') format('woff');
+  /* font-weight: bold;
+  font-style: normal; */
+}
+@font-face {
+  font-family: 'BasisGrotesqueProBold';
+  src: local('BasisGrotesqueProBold'), url('./fonts/BasisGrotesquePro-Bold.woff') format('woff');
+  /* font-weight: bold;
+  font-style: normal; */
+}
+@font-face {
+  font-family: 'BasisGrotesqueProMedium';
+  src: local('BasisGrotesqueProMedium'), url('./fonts/BasisGrotesquePro-Medium.woff') format('woff');
+  /* font-weight: 600;
+  font-style: italic; */
+}
+@font-face {
+  font-family: 'BasisGrotesquePro';
+  src: local('BasisGrotesquePro'), url('./fonts/BasisGrotesquePro-Regular.woff') format('woff');
+  /* font-weight: normal;
+  font-style: normal; */
+}
+@font-face {
+  font-family: 'BasisGrotesqueProLight';
+  src: local('BasisGrotesqueProLight'), url('./fonts/BasisGrotesquePro-Light.woff') format('woff');
+  /* font-weight: 900;
+  font-style: italic; */
+}
 @layer base {
   .container {
     @apply mx-auto px-4 !w-auto;

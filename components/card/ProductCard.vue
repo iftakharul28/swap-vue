@@ -1,20 +1,6 @@
-<script lang="ts">
-import Button from './Button.vue';
-
-export default {
-  props: {
-    title: String,
-    image: String,
-    tags: String,
-    address: String,
-    offer_text: String,
-    stars: Number,
-  },
-};
-</script>
 <template>
   <article>
-    <Button type="link" :href="$props.title" class="block">
+    <Button type="link" href="#" class="block">
       <div className="relative before:h-0 before:block before:pb-[66.66%]">
         <figure className="absolute inset-0 h-full w-full rounded-2xl overflow-hidden">
           <img className="h-full w-full object-cover" :src="$props.image" :alt="$props.title" />
@@ -37,3 +23,15 @@ export default {
     </Button>
   </article>
 </template>
+<script lang="ts">
+export default {
+  props: {
+    title: String,
+    image: String,
+    tags: String,
+    address: String,
+    offer_text: String,
+    stars: Number,
+  },
+};
+</script>

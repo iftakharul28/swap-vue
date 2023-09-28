@@ -1,21 +1,3 @@
-<script setup lang="ts">
-import { mediaPath } from '~/constants/variables';
-import type { restaurantType } from '~/types/restaurant';
-const props = defineProps<{
-  lists: Array<restaurantType>;
-}>();
-const getOfferText = (list: restaurantType) => {
-  if (list.info.aggregatedDiscountInfoV1 && list.info.aggregatedDiscountInfoV3 != undefined) {
-    return `${list.info.aggregatedDiscountInfoV1?.header + ' ' + list.info.aggregatedDiscountInfoV1?.subHeader}`;
-  } else if (list.info.aggregatedDiscountInfoV2 && list.info.aggregatedDiscountInfoV3 != undefined) {
-    return `${list.info.aggregatedDiscountInfoV2?.header + ' ' + list.info.aggregatedDiscountInfoV2?.subHeader}`;
-  } else if (list.info.aggregatedDiscountInfoV3 && list.info.aggregatedDiscountInfoV3 != undefined && list.info.aggregatedDiscountInfoV3?.header) {
-    return `${list.info.aggregatedDiscountInfoV3?.header + ' ' + list.info.aggregatedDiscountInfoV3?.subHeader}`;
-  } else {
-    return '';
-  }
-};
-</script>
 <template>
   <section class="container my-9">
     <div>
@@ -34,3 +16,23 @@ const getOfferText = (list: restaurantType) => {
     </div>
   </section>
 </template>
+<script setup lang="ts">
+import { mediaPath } from '~/constants/variables';
+import type { restaurantType } from '~/types/restaurant';
+import ProductCard from './card/ProductCard.vue';
+const props = defineProps<{
+  lists: Array<restaurantType>;
+}>();
+
+const getOfferText = (list: restaurantType) => {
+  if (list.info.aggregatedDiscountInfoV1 && list.info.aggregatedDiscountInfoV3 != undefined) {
+    return `${list.info.aggregatedDiscountInfoV1?.header + ' ' + list.info.aggregatedDiscountInfoV1?.subHeader}`;
+  } else if (list.info.aggregatedDiscountInfoV2 && list.info.aggregatedDiscountInfoV3 != undefined) {
+    return `${list.info.aggregatedDiscountInfoV2?.header + ' ' + list.info.aggregatedDiscountInfoV2?.subHeader}`;
+  } else if (list.info.aggregatedDiscountInfoV3 && list.info.aggregatedDiscountInfoV3 != undefined && list.info.aggregatedDiscountInfoV3?.header) {
+    return `${list.info.aggregatedDiscountInfoV3?.header + ' ' + list.info.aggregatedDiscountInfoV3?.subHeader}`;
+  } else {
+    return '';
+  }
+};
+</script>
