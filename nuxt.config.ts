@@ -8,4 +8,5 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  nitro: { storage: { data: { driver: 'vercelKV' } } },
 });
