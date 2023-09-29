@@ -18,6 +18,7 @@ export default {
       placeholder: '#A1A1A1',
     },
     container: {
+      center: true,
       screens: {
         '2xl': '1421px',
       },
