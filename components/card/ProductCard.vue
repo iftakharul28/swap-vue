@@ -24,6 +24,8 @@
   </article>
 </template>
 <script lang="ts">
+import StarIcon from '~/assets/icons/StarIcon.vue';
+
 export default {
   props: {
     title: String,
@@ -33,5 +35,6 @@ export default {
     offer_text: String,
     stars: Number,
   },
+  components: { StarIcon },
 };
 </script>

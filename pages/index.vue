@@ -4,6 +4,7 @@ import HeroSlider from '~/components/slider/HeroSlider.vue';
 import ProductList from '~/components/ProductList.vue';
 import CategorySlider from '~/components/slider/CategorySlider.vue';
 import ProductSlider from '~/components/slider/ProductSlider.vue';
+import CitieList from '~/components/CitieList.vue';
 useHead({
   title: 'Order food online from Indias best food delivery service. Order from restaurants near you',
   meta: [
@@ -18,19 +19,6 @@ const { pending, data: contents } = await useFetch(`${baseUrl()}/api/restaurants
   method: 'get',
   lazy: true,
 });
-function increment() {
-  console.log('hi');
-}
-const array = [
-  {
-    id: 1,
-    name: 'jul',
-  },
-  {
-    id: 2,
-    name: 'abb',
-  },
-];
 </script>
 <template>
   <div v-if="pending">Loading ...</div>
@@ -41,5 +29,6 @@ const array = [
       <ProductSlider v-bind:lists="content.lists?.restaurants ? content.lists?.restaurants : []" />
       <ProductList v-bind:lists="content.lists?.restaurants ? content.lists?.restaurants : []" />
     </template>
+    <CitieList v-else-if="i === 7" v-bind:lists="content.brands?.length ? content.brands : []" />
   </template>
 </template>
