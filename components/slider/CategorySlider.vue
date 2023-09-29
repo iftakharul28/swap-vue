@@ -37,7 +37,6 @@ const onScroll = (type: 'left' | 'right') => {
   const cardWidth = cardref._value.childNodes.length ? cardref._value.firstElementChild?.clientWidth || 0 : scrollref._value.scrollWidth / props.lists?.length!;
   const scrollLeftMax = Number(scrollref._value.scrollLeftMax);
   const scrollLeft = scrollref._value.scrollLeft;
-  console.log(scrollref._value, scrollLeftMax);
   switch (type) {
     case 'right':
       if (scrollLeftMax === scrollLeft) {

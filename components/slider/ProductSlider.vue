@@ -49,7 +49,6 @@ const onScroll = (type: 'left' | 'right') => {
   const cardWidth = cardref._value.childNodes.length ? cardref._value.firstElementChild?.clientWidth || 0 : scrollref._value.scrollWidth / props.lists?.length!;
   const scrollLeftMax = Number(scrollref._value.scrollLeftMax);
   const scrollLeft = scrollref._value.scrollLeft;
-
   switch (type) {
     case 'right':
       if (scrollLeftMax === scrollLeft) {
@@ -61,7 +60,6 @@ const onScroll = (type: 'left' | 'right') => {
         activeButton.value.left = true;
         activeButton.value.right = true;
       }
-      // console.log(cardWidth);
       scrollref.value.scroll({
         left: scrollLeft + cardWidth * 2,
         behavior: 'smooth',
@@ -77,7 +75,6 @@ const onScroll = (type: 'left' | 'right') => {
         activeButton.value.left = true;
         activeButton.value.right = true;
       }
-      // console.log(cardWidth);
       scrollref.value.scroll({
         left: scrollLeft - cardWidth * 2,
         behavior: 'smooth',

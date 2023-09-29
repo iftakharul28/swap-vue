@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="overflow-x-scroll hide-scrollbar -mx-4 mt-9" ref="scrollref">
-      <div class="flex space-x-4 group">
+      <div class="flex space-x-4 group" ref="cardref">
         <BannerCard v-for="(list, i) in props.lists" :key="`card-no-${i}`" :title="list.accessibility.altText" :image="getFullImagePath(list.imageId, 'medium')" />
       </div>
     </div>
@@ -28,6 +28,7 @@ const props = defineProps<{
 }>();
 
 const scrollref = ref<any>(null);
+const cardref = ref<any>(null);
 const activeButton = ref({
   left: false,
   right: true,
@@ -35,10 +36,10 @@ const activeButton = ref({
 
 const onScroll = (type: 'left' | 'right') => {
   if (!scrollref._value) return;
-  const cardWidth = scrollref._value.childNodes.length ? scrollref._value.firstElementChild?.clientWidth || 0 : scrollref._value.scrollWidth / props.lists?.length!;
+  const cardWidth = cardref._value.childNodes.length ? cardref._value.firstElementChild?.clientWidth || 0 : scrollref._value.scrollWidth / props.lists?.length!;
   const scrollLeftMax = Number(scrollref._value.scrollLeftMax);
   const scrollLeft = scrollref._value.scrollLeft;
-  // console.log(cardWidth, scrollLeftMax, scrollref);
+
   switch (type) {
     case 'right':
       if (scrollLeftMax === scrollLeft) {
